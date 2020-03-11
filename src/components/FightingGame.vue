@@ -63,12 +63,13 @@
         },
         methods: {
             resetTable() {
-                for (var i = 0; i < this.monsterConfig.count; i++) {
+                this.monsters = [];
+                for (var i = 1; i <= this.monsterConfig.count; i++) {
                     var monsterType = this.monsterConfig.types[Math.floor(Math.random() * this.monsterConfig.types.length)];
-                    this.monsters.push(this.generateMonster(monsterType));
+                    this.monsters.push(this.generateMonster(monsterType,i));
                 }
             },
-            generateMonster(monsterType) {
+            generateMonster(monsterType,id) {
                 return {
                     id:id,
                     name: 'A name',
