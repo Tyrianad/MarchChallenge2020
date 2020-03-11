@@ -1,8 +1,17 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <monsters></monsters>
+            <div class="col-12 pt-4">
+                <h3 class="text-center">
+                    Fighting Game!
+                </h3>
+                    <div class="text-right py-4">
+                        <button class="btn btn-success mr-2" @click="rollDice()"><i class="fas fa-dice"></i> Roll the Dice</button>
+                        <button class="btn btn-warning" @click="askReset()"><i class="fas fa-recycle"></i> Reset Table</button>
+                    </div>
+            </div>
+            <div class="col-12 pt-4">
+                <monsters v-bind:monsters="monsters"></monsters>
             </div>
         </div>
     </div>
@@ -73,6 +82,14 @@
             },
             generateValue(min, max) {
                 return min + Math.floor(Math.random() * (max - min));
+            },
+            askReset(){
+                if(confirm("Do you really want to reset the table?")){
+                    this.resetTable();
+                }
+            },
+            rollDice(){
+                alert('About to fight');
             }
         }
     }
