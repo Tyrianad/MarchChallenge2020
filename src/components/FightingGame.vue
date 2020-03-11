@@ -61,10 +61,14 @@
             },
             generateMonster(monsterType) {
                 return {
-                    'name': 'A name',
-                    'type': monsterType.name,
-                    'health': this.generateValue(monsterType.health.min, monsterType.health.max),
-                    'strength': this.generateValue(monsterType.strength.min, monsterType.strength.max),
+                    id:id,
+                    name: 'A name',
+                    type: monsterType.name,
+                    health: {
+                     current:this.generateValue(monsterType.health.min, monsterType.health.max),
+                     max:monsterType.health.max
+                    },
+                    strength: this.generateValue(monsterType.strength.min, monsterType.strength.max),
                 }
             },
             generateValue(min, max) {
