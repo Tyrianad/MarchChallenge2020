@@ -77,4 +77,11 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
+<style lang="scss">
+    .table{
+        td,th{
+            vertical-align: middle !important;
+            text-align: center;
+        }
+    }
 </style>
