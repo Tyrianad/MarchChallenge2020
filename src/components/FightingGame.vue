@@ -59,7 +59,6 @@
         },
         mounted() {
             this.resetTable();
-            console.log(this.monsters)
         },
         methods: {
             resetTable() {
