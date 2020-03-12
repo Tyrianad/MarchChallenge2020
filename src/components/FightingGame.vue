@@ -7,7 +7,7 @@
                 </h3>
                     <div class="text-right py-4">
                         <button class="btn btn-success mr-2" @click="rollDice()"><i class="fas fa-dice"></i> Roll the Dice</button>
-                        <button class="btn btn-warning" @click="askReset()"><i class="fas fa-recycle"></i> Reset Table</button>
+                        <button class="btn btn-warning" @click="askReset()"><i class="fas fa-recycle"></i> Reset</button>
                     </div>
             </div>
             <div class="col-12 pt-4">
@@ -30,24 +30,28 @@
                         types:
                             [
                                 {
-                                    'name': 'Witch',
-                                    'strength': {'min': 60, 'max': 80},
-                                    'health': {'min': 60, 'max': 80}
+                                    name: 'Witch',
+                                    icon:'🧙‍♀️',
+                                    strength: {'min': 60, 'max': 80},
+                                    health: {'min': 60, 'max': 80}
                                 },
                                 {
-                                    'name': 'Dragon',
-                                    'strength': {'min': 80, 'max': 90},
-                                    'health': {'min': 80, 'max': 90}
+                                    name: 'Dragon',
+                                    icon:'🐉',
+                                    strength: {'min': 80, 'max': 90},
+                                    health: {'min': 80, 'max': 90}
                                 },
                                 {
-                                    'name': 'Snake',
-                                    'strength': {'min': 30, 'max': 60},
-                                    'health': {'min': 30, 'max': 90}
+                                    name: 'Snake',
+                                    icon:'🐍',
+                                    strength: {'min': 30, 'max': 60},
+                                    health: {'min': 30, 'max': 90}
                                 },
                                 {
-                                    'name': 'River Troll',
-                                    'strength': {'min': 22, 'max': 65},
-                                    'health': {'min': 60, 'max': 92}
+                                    name: 'River Troll',
+                                    icon:'👺',
+                                    strength: {'min': 22, 'max': 65},
+                                    health: {'min': 60, 'max': 92}
                                 }
                             ]
                     },
@@ -73,6 +77,7 @@
                     id:id,
                     name: 'A name',
                     type: monsterType.name,
+                    icon: monsterType.icon,
                     health: {
                      current:this.generateValue(monsterType.health.min, monsterType.health.max),
                      max:monsterType.health.max

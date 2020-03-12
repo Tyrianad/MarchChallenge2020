@@ -1,7 +1,7 @@
 <template>
     <tr>
         <td>{{this.monster.name}}</td>
-        <td>{{this.monster.type}}</td>
+        <td>{{this.monster.icon}} {{this.monster.type}}</td>
         <td>{{this.monster.strength}}</td>
         <td>{{this.monster.health.current}}</td>
         <td>{{this.monster.special}}</td>
