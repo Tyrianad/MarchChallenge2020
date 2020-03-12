@@ -1,5 +1,6 @@
 <template>
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
+        <thead>
         <tr>
             <th>Name</th>
             <th>Type</th>
@@ -10,12 +11,15 @@
                 Actions
             </th>
         </tr>
+        </thead>
+        <tbody>
         <monster
                 v-for="(monster, index) in monsters"
                 v-bind:key="index"
                 v-bind:monster="monster"
                 @delete-monster="onDeleteMonster(index)"
         ></monster>
+        </tbody>
     </table>
 </template>
 
