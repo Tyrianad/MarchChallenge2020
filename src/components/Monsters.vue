@@ -1,5 +1,5 @@
 <template>
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover" v-bind:class="{ 'table-dark': isDark }">
         <thead>
         <tr>
             <th>Name</th>
@@ -30,7 +30,7 @@
         components:{
             Monster
         },
-        props:['monsters'],
+        props:['monsters','isDark'],
         methods:{
             onDeleteMonster: function(index){
                 this.monsters.splice(index, 1);

@@ -1,18 +1,29 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 pt-4">
-                <h3 class="text-center">
-                    Fighting Game!
-                </h3>
-                <div class="text-right py-4">
-                    <button class="btn btn-success mr-2" @click="rollDice()"><i class="fas fa-dice"></i> Roll the Dice
-                    </button>
-                    <button class="btn btn-warning" @click="askReset()"><i class="fas fa-recycle"></i> Reset</button>
+    <div id="outer" v-bind:class="{'dark':isDark}">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 pt-4">
+                    <h3 class="text-center">
+                        Fighting Game!
+                    </h3>
+                    <div class="text-right pt-4 pb-2">
+                        <button class="btn btn-success mr-2" @click="rollDice()"><i class="fas fa-dice"></i> Roll the
+                            Dice
+                        </button>
+                        <button class="btn btn-warning" @click="askReset()"><i class="fas fa-recycle"></i> Reset
+                        </button>
+                    </div>
+                    <div class="text-right pb-4">
+                        <button class="btn mr-2 btn-info" @click="switchBg()">
+                            <i v-show="!isDark" class="fas fa-toggle-off"></i>
+                            <i v-show="isDark" class="fas fa-toggle-on"></i>
+                            Toggle dark
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 pt-4">
-                <monsters v-bind:monsters="monsters"></monsters>
+                <div class="col-12 pt-4">
+                    <monsters v-bind:monsters="monsters" v-bind:isDark="isDark"></monsters>
+                </div>
             </div>
         </div>
     </div>
@@ -56,7 +67,8 @@
                                 }
                             ]
                     },
-                monsters: []
+                monsters: [],
+                isDark: false
             };
         },
         components: {
@@ -98,6 +110,9 @@
             rollDice() {
                 alert('About to fight');
             },
+            switchBg() {
+                this.isDark = !this.isDark;
+            },
             /*
 (c) by Thomas Konings
 Random Name Generator for Javascript
@@ -122,5 +137,9 @@ Random Name Generator for Javascript
             vertical-align: middle !important;
             text-align: center;
         }
+    }
+    #outer.dark{
+        background: #454d55;
+        color:white;
     }
 </style>
